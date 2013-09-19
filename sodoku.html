@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sodoku</title>
+	
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="sodoku.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="sodoku.css">
+
+	<script>
+	$(function (){
+		var sodoku = new Array();
+
+		sodoku[0] = [0,0,0, 0,0,0, 0,0,0];
+		sodoku[1] = [7,0,5, 1,0,6, 4,0,2];
+		sodoku[2] = [8,0,2, 0,3,0, 5,0,9];
+
+		sodoku[3] = [0,0,3, 8,0,5, 7,0,0];
+		sodoku[4] = [0,0,9, 0,0,0, 8,0,0];
+		sodoku[5] = [0,0,6, 7,0,1, 9,0,0];
+
+		sodoku[6] = [2,0,4, 0,1,0, 3,0,8];
+		sodoku[7] = [9,0,8, 3,0,4, 2,0,6];
+		sodoku[8] = [0,0,0, 0,0,0, 0,0,0];
+
+		var html = representar("INICIO",sodoku);
+		$('body').append(html);
+
+		$("td").on('click',function (){
+			var $this = $(this),
+				x = $this.attr('data-x'),
+				y = $this.attr('data-y'),
+				ori = $this.attr('data-ori'),
+				_sodoku;
+
+			if( typeof ori !== 'undefined' && ori != '' ){
+				return;
+			}
+
+			var confirm = Number(window.prompt('Qual é valor?'));
+
+			if( confirm && !isNaN(confirm) && confirm>0 ){
+				_sodoku = edit(x,y,confirm,sodoku);
+				if( _sodoku !== true ){
+					$this.html(confirm);
+					sodoku = _sodoku;
+				}
+			}
+
+
+		});
+	});
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>
