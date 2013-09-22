@@ -5,7 +5,7 @@ function representar (titulo,arr){
         html += "<tr>"
         for(x=0;x<arr[y].length;x++){
             if(arr[y][x]!=0){
-                html += "<td data-x='"+x+"' data-y='"+y+"' data-ori='"+arr[y][x]+"'>"+arr[y][x]+"</td>";
+                html += "<td class='dado-original' data-x='"+x+"' data-y='"+y+"' data-ori='"+arr[y][x]+"'>"+arr[y][x]+"</td>";
             }else{
                 html += "<td data-x='"+x+"' data-y='"+y+"'> &nbsp;</td>";
             }

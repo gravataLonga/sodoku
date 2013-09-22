@@ -4,7 +4,20 @@ tr,td {
    text-align:center;
     width:10px;
 }
+
+/*------------------------*/
 table {
  width: 300px; 
   border:1px solid #eee;  
+}
+/*------------------------*/
+
+td.dado-original {
+	color:red;
+	font-weight: bold;
+}
+
+td.dado-user {
+	color:blue;
+	font-weight: bold;
 }

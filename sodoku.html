@@ -43,7 +43,7 @@
 			if( confirm && !isNaN(confirm) && confirm>0 ){
 				_sodoku = edit(x,y,confirm,sodoku);
 				if( _sodoku !== true ){
-					$this.html(confirm);
+					$this.html(confirm).addClass('dado-user')
 					sodoku = _sodoku;
 				}
 			}
